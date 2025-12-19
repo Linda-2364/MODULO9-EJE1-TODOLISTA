@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List - Organizador de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background-animation"></div>
+        <div class="todo-card">
+            <header class="todo-header">
+                <div class="header-content">
+                    <h1><i class="fas fa-tasks"></i> Mi Lista de Tareas</h1>
+                    <p class="subtitle">Organiza tu día de manera efectiva y productiva</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>Hoy: <span id="currentDate"></span></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="todo-app">
+                <div class="input-section">
+                    <div class="input-wrapper">
+                        <i class="fas fa-plus-circle input-icon"></i>
+                        <input type="text" id="todoInput" placeholder="¿Qué necesitas hacer hoy?" autocomplete="off" />
+                    </div>
+                    <button id="addBtn" class="add-button">
+                        <i class="fas fa-plus"></i>
+                        <span>Agregar</span>
+                    </button>
+                </div>
+
+                <div class="filters-section">
+                    <h3><i class="fas fa-filter"></i> Filtros</h3>
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-list"></i>
+                            <span>Todas</span>
+                            <span class="count" id="allCount">0</span>
+                        </button>
+                        <button class="filter-btn" data-filter="active">
+                            <i class="fas fa-clock"></i>
+                            <span>Activas</span>
+                            <span class="count" id="activeCount">0</span>
+                        </button>
+                        <button class="filter-btn" data-filter="completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Completadas</span>
+                            <span class="count" id="completedCount">0</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="todo-list-container">
+                    <h3><i class="fas fa-clipboard-list"></i> Tus Tareas</h3>
+                    <ul id="todoList" class="todo-list">
+                        <!-- Las tareas se añadirán aquí dinámicamente -->
+                    </ul>
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-clipboard"></i>
+                        <p>No hay tareas aún. ¡Agrega tu primera tarea!</p>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <div class="items-left">
+                        <i class="fas fa-tasks"></i>
+                        <span id="itemsLeft">0 tareas pendientes</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="clearCompleted" class="clear-btn">
+                            <i class="fas fa-trash-alt"></i>
+                            <span>Limpiar Completadas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="todo-footer">
+                    <p><i class="fas fa-lightbulb"></i> Consejo: Haz clic en una tarea para marcarla como completada</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
